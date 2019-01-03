@@ -1,0 +1,84 @@
+//widescreens
+@include mediaxl {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+//desktops
+@include medialg {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+//tablets and small laptops
+@include mediamd {
+    main {
+        text-align: center;
+        align-items: center;
+
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    ul.menu-nav,
+    div.menu-branding {
+
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .menu-nav {
+        height: 75vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+    }
+
+    .menu-branding {
+        height: 25vh;
+        transform: translate3d(100%, 0, 0);
+
+        .portrait {
+            width: 140px;
+            height: 140px;
+            background: url(../img/dpsm.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage'
+            'bio'
+            'job1'
+            'job2'
+            'job3';
+
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+//smartphones
+@include mediasm {
+    main#home h1 {
+        margin-top: 6vh;
+
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
